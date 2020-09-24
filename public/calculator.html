@@ -7,18 +7,21 @@
   <title>Calculator!</title>
 </head>
 <body>
-  <section class="text-gray-500 bg-gray-900 body-font">
-    <div class="container px-5 py-24 mx-auto">
+  <section class="text-gray-500 bg-gray-900 body-font h-screen">
+    <div class="container px-5 py-24 mx-auto h-screen flex flex-col justify-center align-center">
       <div class="flex flex-col text-center w-full mb-12">
         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Reliac Calculator</h1>
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Franzen you! Probably haven't heard of them man bun deep. 🤷‍♂️</p>
       </div>
       <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0">
         <input id="calculatorInput" class="flex-grow w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0" placeholder="Calculate !!!" type="text" >
-        <button onclick="answerFetcher()" class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Click to calculate</button>
+        <button onclick="answerFetcher()" class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Calculate</button>
+      </div>
+      <div class="flex flex-col flex-wrap justify-center lg:w-2/3 w-full sm:flex-row mx-auto px-8 sm:px-0">
+        <h1 class="pt-12 sm:text-3xl text-2xl self-center">The answer is:</h1>
+        <h1 id="answer" class="pt-12 pl-12 sm:text-5xl text-2xl text-green-500 text-white"></h1>
       </div>
     </div>
-    <h2 id="answer"></h2>
   </section>
   <script>
     function answerFetcher() {
@@ -26,7 +29,7 @@
       const result = fetch(`http://localhost:8080/calculator?${question}`)
         .then( (data) => data.json())
         .then(json => { document.querySelector("#answer")
-        .innerHTML = "The answer is: " + json})    
+        .innerHTML = json})    
     }
   </script>
 </body>

@@ -6,18 +6,20 @@ function routeHandler(req, res) {
   const { url, method } = req;
   console.log({ url });
   if (url === '/' && method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
     const homePage = fs.readFileSync('./public/index.html');
-    return res.end(homePage);
+    res.write(homePage);
+    return res.end();
   }
   if (url === '/calculator' && method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
     const calculatorPage = fs.readFileSync('./public/calculator.html');
-    return res.end(calculatorPage);
+    res.write(calculatorPage);
+    return res.end();
   }
   if (url.includes('/calculator?')) {
     const expression = url.split('?')[1];
     const answ = calculator.evaluate(expression);
-    // res.json({ answ });
-    console.log(answ);
     return res.end(JSON.stringify(answ));
   }
 }
