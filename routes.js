@@ -18,7 +18,7 @@ function routeHandler(req, res) {
     const answ = calculator.evaluate(expression);
     // res.json({ answ });
     console.log(answ);
-    return res.end(answ);
+    return res.end(JSON.stringify(answ));
   }
 }
 
