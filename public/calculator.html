@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator!</title>
+</head>
+<body>
+    <input type="text" id="calculatorInput">
+    <button onclick='answerFetcher()'>Click to calculate</button>
+    <h2 id="answer"></h2>
+  <script>
+    function answerFetcher() {
+      const question = document.querySelector('#calculatorInput').value  
+      const result = fetch(`http://localhost:8080/calculator?${question}`)
+        .then( (data) => console.log(data.json()))
+        .then(json => { document.querySelector("#answer")
+        .innerHTML = "The answer is: " + json})    
+    }
+  </script>
+</body>
+</html>
