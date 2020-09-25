@@ -39,24 +39,46 @@ function routeHandler(req, res) {
   }
 }
 
-switch (true) {
-  case value1:
-    //Statements executed when the
-    //result of expression matches value1
-    [break;]
-  case value2:
-    //Statements executed when the
-    //result of expression matches value2
-    [break;]
-  ...
-  case valueN:
-    //Statements executed when the
-    //result of expression matches valueN
-    [break;]
-  [default:
-    //Statements executed when none of
-    //the values match the value of the expression
-    [break;]]
-}
+// function routeHandler(req, res) {
+//   const { url, method } = req;
+//   console.log({ url });
+//   const arabicToRoman = fs.readFileSync('./public/arabictoroman.html');
+//   switch (true) {
+//     case (url === '/' && method === 'GET'):
+//       const homePage = fs.readFileSync('./public/index.html');
+//       return res.end(homePage);
+
+//     case (url === '/calculator' && method === 'GET'):
+//       const calculatorPage = fs.readFileSync('./public/calculator.html');
+//       return res.end(calculatorPage);
+
+//     case (url === '/romantoarabic' && method === 'GET'):
+//       const romanToArabic = fs.readFileSync('./public/romantoarabic.html');
+//       return res.end(romanToArabic);
+
+//     case (url === '/arabicToRoman' && method === 'GET'):
+//       return res.end(arabicToRoman);
+
+//     case (url.includes('/romantoarabic?')):
+//       const expression = url.split('?')[1];
+//       const answer = romanToArabic.romanToArabic(expression);
+//       return res.end(JSON.stringify(answer));
+
+//     case url.includes('/arabictoroman?'):
+//       const arabExpression = url.split('?')[1];
+//       const arabAnswer = arabicToRoman.arabicToRoman(expression);
+//       return res.end(JSON.stringify(answer));
+//       break;
+
+//     case (url === '/calculator?'):
+//       const numberExpression = url.split('?')[1];
+//       const numberAnswer = calculator.evaluate(numberExpression);
+//       return res.end(JSON.stringify(numberAnswer));
+//     default:
+//       res.writeHead(404, { 'Content-Type': 'text/plain' });
+//       res.end();
+//       break;
+//   }
+// }
 
 module.exports.handler = routeHandler;
