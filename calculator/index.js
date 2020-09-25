@@ -1,7 +1,11 @@
 function evaluate(str) {
+  const onlyNumber = RegExp(/^\d+$/g);
+  if (onlyNumber.test(str)) {
+    return str;
+  }
   const pattern = RegExp(/^\s*[-]?\s*[0-9]+\s*[+-/*]\s*-?\s*[0-9]+\s*$/gm);
   if (!pattern.test(str)) {
-    return 'invalidinput';
+    return 'invalid input';
   }
   const expression = str.trim();
   let operator = '';
