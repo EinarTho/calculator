@@ -39,6 +39,7 @@ function routeHandler(req, res) {
   }
 }
 
+
 // function routeHandler(req, res) {
 //   const { url, method } = req;
 //   console.log({ url });
