@@ -6,17 +6,7 @@ const rawRomanNumber = (num, str) => {
       return rawRomanNumber(num - 1000, updatedStr);
     case num >= 500:
       updatedStr += 'D';
-      return rawRomanNumber(num - 500, updatedStr);
-    case num >= 100:
-      updatedStr += 'C';
-      return rawRomanNumber(num - 100, updatedStr);
-    case num >= 50:
-      updatedStr += 'L';
-      return rawRomanNumber(num - 50, updatedStr);
-    case num >= 10:
-      updatedStr += 'X';
-      return rawRomanNumber(num - 10, updatedStr);
-    case num >= 5:
+
       updatedStr += 'V';
       return rawRomanNumber(num - 5, updatedStr);
     case num <= 4 && num > 0:
