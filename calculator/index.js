@@ -3,14 +3,17 @@ function evaluate(str) {
   if (onlyNumber.test(str)) {
     return str;
   }
-  const pattern = RegExp(/^\s*[-]?\s*[0-9]+\s*[+-/*]\s*-?\s*[0-9]+\s*$/gm);
+  const expression = RegExp(/^\s*[-]?\s*[0-9]+\s*[+-/*]\s*-?\s*[0-9]+\s*$/gm);
   if (!pattern.test(str)) {
     return 'invalid input';
   } else{
     return 'go home'
   }
+
+  const pattern = str.trim();
   
-  const expression = str.trim();
+ 
+
   let operator = '';
   let first = '';
   let last = '';
