@@ -27,6 +27,7 @@ const romanToArabic = str => {
       sum += number;
     }
   }
+  console.log(sum);
   return sum;
 };
 

@@ -21,6 +21,7 @@ function evaluate(str) {
   }
   const num1 = parseInt(first, 10);
   const num2 = parseInt(last, 10);
+  console.log(num1);
 
   switch (operator) {
     case '+':
@@ -35,6 +36,7 @@ function evaluate(str) {
       }
       return (num1 / num2).toString();
     default:
+      console.log(num1);
       throw new Error('Wrong operator');
   }
 }
