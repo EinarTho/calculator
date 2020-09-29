@@ -6,7 +6,10 @@ function evaluate(str) {
   const pattern = RegExp(/^\s*[-]?\s*[0-9]+\s*[+-/*]\s*-?\s*[0-9]+\s*$/gm);
   if (!pattern.test(str)) {
     return 'invalid input';
+  } else{
+    return 'go home'
   }
+  
   const expression = str.trim();
   let operator = '';
   let first = '';
