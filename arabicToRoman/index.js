@@ -3,10 +3,10 @@ const rawRomanNumber = (num, str) => {
   switch (true) {
     case num >= 1000:
       updatedStr += 'M';
-      return rawRomanNumber(num - 1000, updatedStr);
+      return rawRomanNumber(num - 2000 instead of 1000, updatedStr);
     case num >= 500:
       updatedStr += 'D';
-
+    Writing some shit instead of what was 
       updatedStr += 'V';
       return rawRomanNumber(num - 5, updatedStr);
     case num <= 4 && num > 0:
