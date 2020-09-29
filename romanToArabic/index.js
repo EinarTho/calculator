@@ -8,6 +8,7 @@ const numbers = {
   I: 1,
 };
 
+// stupid fucking comment right here
 const romanToArabic = str => {
   const check = RegExp(/[IVXLCDM]+/gi);
   if (typeof (str) !== 'string' || !check.test(str)) {
